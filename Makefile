@@ -6,7 +6,7 @@
 #    By: sadoming <sadoming@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/19 12:00:39 by sadoming          #+#    #+#              #
-#    Updated: 2023/12/19 14:23:24 by sadoming         ###   ########.fr        #
+#    Updated: 2023/12/19 17:07:03 by sadoming         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,19 +22,20 @@ CFLAGS = -Wall -Wextra -Werror -g
 OBJ_DIR = ./obj
 DIR1 = ./ft_str
 #DIR2 = ./
+
+vpath %.c $(DIR1)
 # ------------------- #
 # Sorces:
 
 MAK = Makefile
 LIB = push_swap.h
 
-SRC = ft_free
-OBJ = $(addprefix $(DIR1)/, $(addsuffix .o, $(SRC)))
+SRC = ft_free.c
+
+OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:%.c=%.o))
 # ******************************************************************************* #
 #-------------------------------------------------------------#
-all:
-	@echo "\033[1;93m\n * Compiling Libft -->\033[1;97m\n"
-	@make -s $(NAME)
+all: obj_dir $(NAME)
 #-------------------------------------------------------------#
 #-------------------------------------------------------------#
 help:
@@ -67,7 +68,10 @@ norm:
 # ******************************************************************************* #
 # Compiling Region:
 
-$(OBJ_DIR)/%.o: $(OBJ_DIR)/%.c $(LIB) $(MAK)
+obj_dir:
+	@mkdir -p $(OBJ_DIR)
+
+$(OBJ_DIR)/%.o: %.c $(LIB) $(MAK) | obj_dir
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
@@ -78,7 +82,7 @@ $(NAME): $(OBJ)
 # Clean region
 
 clean:
-	@/bin/rm -f $(OBJ)
+	#@/bin/rm -f $(OBJ)
 	@echo "\033[1;34m\n All obj removed\033[1;97m\n"
 
 
