@@ -89,6 +89,7 @@ mobj: $(OBJ_DIR)
 	@echo "\nProcesing...\n"
 	@make -s $(OBJ)
 	@echo "\033[1;35m OBJS Compiled!\n"
+	@mv $(OBJ) $(OBJ_DIR)
 	@echo "\033[1;33m Compiling $(NAME)...\n"
 	@make -s $(NAME)
 	@echo "\t\t\t\t\t\t\033[1;34m  ~ DONE! ~\n"
