@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadoming <sadoming@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 17:52:22 by sadoming          #+#    #+#             */
-/*   Updated: 2024/02/12 17:05:35 by sadoming         ###   ########.fr       */
+/*   Created: 2023/05/05 17:30:31 by sadoming          #+#    #+#             */
+/*   Updated: 2024/02/12 16:37:20 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 
-char	*ft_substr(const char *s, unsigned int start, size_t len)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	cnt;
-	size_t	ln;
-	char	*sub;
+	unsigned char	*str;
+	size_t			pos;
 
-	ln = ft_strlen(s);
-	if (start > ln)
-		start = ln;
-	if (len >= ft_strlen(s + start))
-		len = ft_strlen(s) - start;
-	sub = malloc(len + 1);
-	if (sub == 0)
+	str = (unsigned char *) s;
+	pos = 0;
+	if (n == 0)
 		return (0);
-	cnt = 0;
-	while (cnt < len && s[start])
+	while (pos < n -1)
 	{
-		sub[cnt] = s[start];
-		start++;
-		cnt++;
+		if (str[pos] == (unsigned char)c)
+			return (str + pos);
+		pos++;
 	}
-	sub[cnt] = '\0';
-	return (sub);
+	if (str[pos] == (unsigned char) c)
+		return (str + pos);
+	else
+		return (0);
 }
