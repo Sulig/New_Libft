@@ -6,13 +6,13 @@
 /*   By: sadoming <sadoming@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 18:55:07 by sadoming          #+#    #+#             */
-/*   Updated: 2024/02/12 19:26:13 by sadoming         ###   ########.fr       */
+/*   Updated: 2024/02/13 13:50:15 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 
-int	ft_putchar_fd(int fd, char ch)
+int	ft_putchar_fd(char ch, int fd)
 {
 	int	ret;
 
@@ -20,7 +20,7 @@ int	ft_putchar_fd(int fd, char ch)
 	return (ret);
 }
 
-int	ft_putstr_fd(int fd, char *str)
+int	ft_putstr_fd(char *str, int fd)
 {
 	int		ret;
 	int		cnt;
@@ -38,18 +38,18 @@ int	ft_putstr_fd(int fd, char *str)
 	return (ret);
 }
 
-int	ft_putnbr_fd(int fd, int nbr)
+int	ft_putnbr_fd(int nbr, int fd)
 {
 	char	*str;
 	int		ret;
 
 	str = ft_itoa(nbr);
-	ret = ft_putstr_fd(fd, str);
+	ret = ft_putstr_fd(str, fd);
 	free(str);
 	return (ret);
 }
 
-int	ft_putunsig_fd(int fd, size_t nbr, char cast)
+int	ft_putunsig_fd(size_t nbr, char cast, int fd)
 {
 	char	*str;
 	int		ret;
@@ -57,11 +57,11 @@ int	ft_putunsig_fd(int fd, size_t nbr, char cast)
 
 	save = 0;
 	if (cast == 'p')
-		save = ft_putstr_fd(fd, "0x");
+		save = ft_putstr_fd("0x", fd);
 	if (save == -1)
 		return (save);
 	str = ft_unsig_tobase(nbr, cast);
-	ret = ft_putstr_fd(fd, str);
+	ret = ft_putstr_fd(str, fd);
 	free(str);
 	if (ret == -1)
 		return (ret);

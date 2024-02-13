@@ -6,7 +6,7 @@
 #    By: sadoming <sadoming@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/19 12:00:39 by sadoming          #+#    #+#              #
-#    Updated: 2024/02/12 19:43:25 by sadoming         ###   ########.fr        #
+#    Updated: 2024/02/13 13:58:17 by sadoming         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,13 +19,15 @@ CFLAGS = -Wall -Wextra -Werror -g
 # ------------------ #
 # Directories:
 
+ACT_DIR = ./
 OBJ_DIR = ./obj
+GNL_DIR = ./ft_gnl
 CNV_DIR = ./ft_cnv
 MEM_DIR = ./ft_mem
 STR_DIR = ./ft_str
 WRT_DIR = ./ft_wrt
 
-LST_DIR = ft_lst/
+LST_DIR = ./ft_lst
 
 # ------------------- #
 # Sorces:
@@ -33,6 +35,7 @@ LST_DIR = ft_lst/
 MAK = Makefile
 LIB = ./include/libft.h
 
+GNL_SRC = get_next_line.c
 CNV_SRC = ft_atoi.c ft_itoa.c ft_strcapitalize.c ft_to_upplow.c
 WRT_SRC = ft_printf.c ft_printf_fd.c ft_write_cast.c ft_write_cast_fd.c
 MEM_SRC = ft_calloc.c ft_free.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c
@@ -43,16 +46,21 @@ LST_SRC = ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c\
 		  ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c\
 		  ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c
 
-SRC = ft_gnl/get_next_line.c
+SRC = $(addprefix $(GNL_DIR)/, $(GNL_SRC))
 SRC += $(addprefix $(CNV_DIR)/, $(CNV_SRC))
 SRC += $(addprefix $(MEM_DIR)/, $(MEM_SRC))
 SRC += $(addprefix $(STR_DIR)/, $(STR_SRC))
 SRC += $(addprefix $(WRT_DIR)/, $(WRT_SRC))
 SRC += $(addprefix $(LST_DIR)/, $(LST_SRC))
-OBJ = $(SRC:.c=.o)
+
+RSC = $(GNL_SRC) $(CNV_SRC) $(WRT_SRC) $(MEM_SRC) $(STR_SRC) $(LST_SRC)
+
+TMP = $(SRC:.c=.o)
+OBJ = $(addprefix $(OBJ_DIR)/, $(ACT_DIR:.c=.o))
+OBJ_SRC = $(addprefix $(OBJ_DIR)/, $(RSC:.c=.o))
 # ******************************************************************************* #
 #-------------------------------------------------------------#
-all: mobj
+all: $(NAME)
 #-------------------------------------------------------------#
 #-------------------------------------------------------------#
 help:
@@ -85,24 +93,21 @@ norm:
 # ******************************************************************************* #
 # Compiling Region:
 
-mobj: $(OBJ_DIR)
-	@echo "\nProcesing...\n"
-	@make -s $(OBJ)
-	@echo "\033[1;35m OBJS Compiled!\n"
-	@mv $(OBJ) $(OBJ_DIR)
-	@echo "\033[1;33m Compiling $(NAME)...\n"
-	@make -s $(NAME)
-	@echo "\t\t\t\t\t\t\033[1;34m  ~ DONE! ~\n"
-
-$(OBJ_DIR):
-	@mkdir -p $(OBJ_DIR)
-
-$%.o: %.c $(LIB) $(MAK)
+%.o: %.c $(LIB) $(MAK)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME):
-	@ar rc $(NAME) $(OBJ)
-	@echo "\033[1;32m Libft Compiled Successfully\033[1;97m\n"
+$(OBJ_DIR):
+	@echo "Processing...\n"
+	@mkdir -p $(OBJ_DIR)
+
+$(OBJ): $(OBJ_DIR) $(TMP)
+	@mv -f $(TMP) $(OBJ_DIR)
+	@echo "\033[1;35m\n OBJS Compiled!\n"
+
+$(NAME): $(OBJ)
+	@echo "\033[1;33m * Compiling $(NAME) -->\033[1;37m\n"
+	ar rc $(NAME) $(OBJ_SRC)
+	@echo "\033[1;32m\n $(NAME) Compiled Successfully\033[1;97m\n"
 
 # ********************************************************************************* #
 # Clean region
@@ -123,5 +128,5 @@ clear: fclean
 
 re: fclean all
 # -------------------- #
-.PHONY: all author clean clear fclean help mobj norm re
+.PHONY: all author clean clear fclean help norm re
 # ********************************************************************************** #

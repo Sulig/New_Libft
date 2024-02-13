@@ -6,7 +6,7 @@
 /*   By: sadoming <sadoming@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 18:27:49 by sadoming          #+#    #+#             */
-/*   Updated: 2024/02/12 19:41:39 by sadoming         ###   ########.fr       */
+/*   Updated: 2024/02/13 13:48:45 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,19 @@ static int	ft_switch_fd(int fd, char cast, va_list args)
 
 	ret = 0;
 	if (cast == 'c')
-		ret += ft_putchar_fd(fd, va_arg(args, int));
+		ret += ft_putchar_fd(va_arg(args, int), fd);
 	else if (cast == 's')
-		ret += ft_putstr_fd(fd, va_arg(args, char *));
+		ret += ft_putstr_fd(va_arg(args, char *), fd);
 	else if (cast == 'p')
-		ret += ft_putunsig_fd(fd, va_arg(args, unsigned long), cast);
+		ret += ft_putunsig_fd(va_arg(args, unsigned long), cast, fd);
 	else if (cast == 'd' || cast == 'i')
-		ret += ft_putnbr_fd(fd, va_arg(args, int));
+		ret += ft_putnbr_fd(va_arg(args, int), fd);
 	else if (cast == 'u' || cast == 'x')
-		ret += ft_putunsig_fd(fd, va_arg(args, unsigned int), cast);
+		ret += ft_putunsig_fd(va_arg(args, unsigned int), cast, fd);
 	else if (cast == 'X')
-		ret += ft_putunsig_fd(fd, va_arg(args, unsigned int), cast);
+		ret += ft_putunsig_fd(va_arg(args, unsigned int), cast, fd);
 	else
-		ret += ft_putchar_fd(fd, cast);
+		ret += ft_putchar_fd(cast, fd);
 	return (ret);
 }
 

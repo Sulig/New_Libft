@@ -6,7 +6,7 @@
 /*   By: sadoming <sadoming@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 19:27:16 by sadoming          #+#    #+#             */
-/*   Updated: 2024/02/12 19:44:16 by sadoming         ###   ########.fr       */
+/*   Updated: 2024/02/13 13:58:02 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,10 @@ int		ft_putstr(char *str);
 int		ft_putunsig(size_t nbr, char cast);
 int		ft_printf(char const *str, ...);
 
-int		ft_putchar_fd(int fd, char ch);
-int		ft_putnbr_fd(int fd, int nbr);
-int		ft_putstr_fd(int fd, char *str);
-int		ft_putunsig_fd(int fd, size_t nbr, char cast);
+int		ft_putchar_fd(char ch, int fd);
+int		ft_putnbr_fd(int nbr, int fd);
+int		ft_putstr_fd(char *str, int fd);
+int		ft_putunsig_fd(size_t nbr, char cast, int fd);
 int		ft_printf_fd(int fd, char const *str, ...);
 
 /* LENGHT */
