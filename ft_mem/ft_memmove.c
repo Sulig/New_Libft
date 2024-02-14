@@ -6,7 +6,7 @@
 /*   By: sadoming <sadoming@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 13:37:57 by sadoming          #+#    #+#             */
-/*   Updated: 2024/02/12 16:39:38 by sadoming         ###   ########.fr       */
+/*   Updated: 2024/02/14 17:43:42 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,9 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	const unsigned char	*str;
 	unsigned char		*des;
-	size_t				ln;
 
 	str = (const unsigned char *) src;
 	des = (unsigned char *) dst;
-	ln = 0;
 	if (src == dst)
 		return (dst);
 	if (dst < src)

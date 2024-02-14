@@ -6,7 +6,7 @@
 /*   By: sadoming <sadoming@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:19:23 by sadoming          #+#    #+#             */
-/*   Updated: 2024/02/12 16:37:27 by sadoming         ###   ########.fr       */
+/*   Updated: 2024/02/14 17:42:35 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,5 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 			cnt++;
 		ascii = str[cnt] - com[cnt];
 	}
-	if (str[cnt] < 0 || com[cnt] < 0)
-		return (ascii * -1);
-	else
-		return (ascii);
+	return (ascii);
 }

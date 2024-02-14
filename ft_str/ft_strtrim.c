@@ -6,7 +6,7 @@
 /*   By: sadoming <sadoming@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 20:16:49 by sadoming          #+#    #+#             */
-/*   Updated: 2024/02/12 20:17:54 by sadoming         ###   ########.fr       */
+/*   Updated: 2024/02/14 17:53:12 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,9 @@ char	*ft_strtrim(const char *s1, const char *set)
 			break ;
 		ln++;
 	}
-	cnt = 0;
-	while (s1[cnt + 1])
-		cnt++;
-	while (cnt >= 0)
-	{
+	cnt = ft_strlen(s1);
+	while (--cnt)
 		if (!ft_strchr(set, s1[cnt]))
 			break ;
-		cnt--;
-	}
 	return (ft_substr(s1, ln, (cnt + 1) - ln));
 }
