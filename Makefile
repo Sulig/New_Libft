@@ -97,15 +97,15 @@ norm:
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJ_DIR):
-	@echo "Processing...\n"
+	@echo " Processing $(NAME) ..."
 	@mkdir -p $(OBJ_DIR)
 
 $(OBJ): $(OBJ_DIR) $(TMP)
 	@mv -f $(TMP) $(OBJ_DIR)
-	@echo "\033[1;35m\n OBJS Compiled!\n"
+	@echo "\033[1;35m\n OBJS for $(NAME) created succesfuly\n"
 
 $(NAME): $(OBJ)
-	@echo "\033[1;33m * Compiling $(NAME) -->\033[1;37m\n"
+	@echo " * Creating $(NAME)\033[1;37m\n"
 	ar rc $(NAME) $(OBJ_SRC)
 	@echo "\033[1;32m\n $(NAME) Compiled Successfully\033[1;97m\n"
 
