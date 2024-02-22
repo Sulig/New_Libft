@@ -6,12 +6,11 @@
 /*   By: sadoming <sadoming@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 18:55:45 by sadoming          #+#    #+#             */
-/*   Updated: 2024/02/22 16:13:32 by sadoming         ###   ########.fr       */
+/*   Updated: 2024/02/12 18:57:04 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/converter.h"
-#include "../include/write.h"
+#include "../include/libft.h"
 
 int	ft_putchar(char ch)
 {

@@ -6,13 +6,11 @@
 /*   By: sadoming <sadoming@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 20:16:49 by sadoming          #+#    #+#             */
-/*   Updated: 2024/02/22 16:56:32 by sadoming         ###   ########.fr       */
+/*   Updated: 2024/02/14 17:53:12 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/lenght.h"
-#include "../include/searchers.h"
-#include "../include/string_utils.h"
+#include "../include/libft.h"
 
 /*
  * Trim the *set off of s1

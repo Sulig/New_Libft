@@ -6,11 +6,11 @@
 /*   By: sadoming <sadoming@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:19:23 by sadoming          #+#    #+#             */
-/*   Updated: 2024/02/22 16:45:21 by sadoming         ###   ########.fr       */
+/*   Updated: 2024/02/14 17:42:35 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "../include/libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
