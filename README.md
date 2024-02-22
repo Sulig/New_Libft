@@ -6,11 +6,22 @@
 
 ***
 ## Resumen: 
-
+Quien ha dicho que debas quedarte con la Libft actual? -----------------------> <br/>
+Libft Mejorada! Se han añadido nuevas funciones y mejorado algunas ya vigentes! <br/>
+Tambien incluye algunas funciones de la anterior libreria
 
 ***
 ## Contenido del repositorio:
-- Libft + ft_printf + ft_printf_fd + get_next_line
+- Libft
+- ft_printf + ft_printf_fd
+- get_next_line
+- Otras utilidades interesantes
+
+** Branch Libft_v1
+- Un solo header con todas las funciones
+
+** Branch Libft_v2
+- Varios headers, cada uno con diferentes funciones segun su uso.
 
 ***
 ## Instalacion:
