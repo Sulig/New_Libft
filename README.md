@@ -27,6 +27,8 @@ Tambien incluye algunas funciones de la anterior libreria
 ## Instalacion:
 Puedes clonar el repositorio y obtener las dos versiones de la libreria con:
 
+    git clone https://github.com/Sulig/New_Libft.git
+
 Si prefieres solo la libreria con un solo header:
 
     git clone -b Libft_v1 https://github.com/Sulig/New_Libft.git
