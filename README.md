@@ -17,9 +17,7 @@ Tambien incluye algunas funciones de la anterior libreria
 - get_next_line
 - Otras utilidades interesantes
 
-> [!WARNING]\
-> Este repositorio esta siendo reconstruido, pero la version anterior con las dos versiones estan disponibles
-> si utilizas este comando:
+Utiliza este comando para clonar solamente esta version:
 
     git clone -b that-libft https://github.com/Sulig/New_Libft.git
 
