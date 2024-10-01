@@ -21,7 +21,7 @@ Tambien incluye algunas funciones de la anterior libreria
 > Este repositorio esta siendo reconstruido, pero la version anterior con las dos versiones estan disponibles
 > si utilizas este comando:
 
-    git clone -b Libft_v1 https://github.com/Sulig/New_Libft.git
+    git clone -b that-libft https://github.com/Sulig/New_Libft.git
 
 ***
 ~ Made by sadoming ~ 
