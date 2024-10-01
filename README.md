@@ -17,25 +17,11 @@ Tambien incluye algunas funciones de la anterior libreria
 - get_next_line
 - Otras utilidades interesantes
 
-** Branch Libft_v1
-- Un solo header con todas las funciones
-
-** Branch Libft_v2
-- Varios headers, cada uno con diferentes funciones segun su uso.
-
-***
-## Instalacion:
-Puedes clonar el repositorio y obtener las dos versiones de la libreria con:
-
-    git clone https://github.com/Sulig/New_Libft.git
-
-Si prefieres solo la libreria con un solo header:
+> [!WARNING]\
+> Este repositorio esta siendo reconstruido, pero la version anterior con las dos versiones estan disponibles
+> si utilizas este comando:
 
     git clone -b Libft_v1 https://github.com/Sulig/New_Libft.git
-
-Si prefieres solo la libreria con multiples headers:
-
-    git clone -b Libft_v2 https://github.com/Sulig/New_Libft.git
 
 ***
 ~ Made by sadoming ~ 
