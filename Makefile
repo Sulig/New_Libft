@@ -6,7 +6,7 @@
 #    By: sadoming <sadoming@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/01 11:55:07 by sadoming          #+#    #+#              #
-#    Updated: 2024/10/01 13:46:56 by sadoming         ###   ########.fr        #
+#    Updated: 2024/10/01 16:12:26 by sadoming         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,8 @@ MEM_SRC = ft_calloc.c ft_free.c ft_memchr.c ft_memcmp.c ft_memcpy.c\
 STR_SRC = ft_split.c ft_strchr.c ft_strcmp.c ft_strcpy.c ft_strcut.c\
 		  ft_strinter.c ft_strjoin.c ft_strlen.c ft_strstr.c ft_strtrim.c\
 		  ft_substr.c ft_apears_in.c ft_strremove.c
+
+ARR_SRC = ft_arrsize.c
 
 LST_SRC = ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c\
 		  ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c\

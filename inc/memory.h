@@ -3,21 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   memory.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sadoming <sadoming@student.42barcel>       +#+  +:+       +#+        */
+/*   By: sadoming <sadoming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 16:42:13 by sadoming          #+#    #+#             */
-/*   Updated: 2024/04/24 18:56:54 by sadoming         ###   ########.fr       */
+/*   Updated: 2024/10/01 17:27:20 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MEMORY_H
 # define MEMORY_H
 
-/* MEMORY */
-void	*ft_auto_free_arr(char **arr);
-void	*ft_free_arr(size_t size, char **words);
-void	*ft_free_str(char *str);
 void	donothing(void *ptr);
+
+/* MEMORY */
+void	*ft_free_ptr(void *ptr);
+void	*ft_free_arr(void **arr);
+
+void	*ft_free_str(char *str);
+void	*ft_free_arrstr(char **arr);
+
 void	*ft_calloc(size_t count, size_t size);
 
 void	*ft_memcpy(void *dst, const void *src, size_t n);
