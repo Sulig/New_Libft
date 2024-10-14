@@ -1,28 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arrays.h                                           :+:      :+:    :+:   */
+/*   ft_memdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadoming <sadoming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 18:09:37 by sadoming          #+#    #+#             */
-/*   Updated: 2024/10/14 13:07:15 by sadoming         ###   ########.fr       */
+/*   Created: 2024/10/14 12:29:11 by sadoming          #+#    #+#             */
+/*   Updated: 2024/10/14 12:38:20 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARRAYS_H
-# define ARRAYS_H
+#include <stdlib.h>
 
-# include <stdlib.h>
+/*
+ * Duplicates any pointer.
+ * * Return NULL if !s1
+ */
+void	*ft_memdup(void *s1)
+{
+	char	*cpy;
+	char	*sr;
+	size_t	len;
 
-/* ARRAYS */
-size_t	ft_arrsize(void **s);
-size_t	ft_arrsize_str(char **s);
-
-void	**arrmap(void **org);
-void	**arrpop(void **org, size_t pop);
-void	**arrpush(void **org, void *add);
-
-char	**ft_strarrdup(char **to_copy);
-
-#endif
+	len = 0;
+	sr = (char *)s1;
+	if (!sr)
+		return (NULL);
+	while (sr[len])
+		len++;
+	cpy = malloc(len + 1);
+	if (!cpy)
+		return (NULL);
+	len = 0;
+	while (sr[len])
+	{
+		cpy[len] = sr[len];
+		len++;
+	}
+	cpy[len] = '\0';
+	return ((void *)cpy);
+}

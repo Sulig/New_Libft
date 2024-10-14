@@ -6,7 +6,7 @@
 /*   By: sadoming <sadoming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 16:42:13 by sadoming          #+#    #+#             */
-/*   Updated: 2024/10/01 17:27:20 by sadoming         ###   ########.fr       */
+/*   Updated: 2024/10/14 12:33:09 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	*ft_free_arrstr(char **arr);
 
 void	*ft_calloc(size_t count, size_t size);
 
+void	*ft_memdup(void *s1);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memset(void *b, int c, size_t len);

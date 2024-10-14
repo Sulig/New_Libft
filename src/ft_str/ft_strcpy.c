@@ -6,7 +6,7 @@
 /*   By: sadoming <sadoming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 19:07:49 by sadoming          #+#    #+#             */
-/*   Updated: 2024/10/01 18:23:30 by sadoming         ###   ########.fr       */
+/*   Updated: 2024/10/14 12:26:14 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,9 @@ char	*ft_strdup(const char *s1)
 	char	*cpy;
 	size_t	len;
 
-	len = 0;
-	if (!ft_strlen(s1))
+	len = ft_strlen(s1);
+	if (!len)
 		return (NULL);
-	while (s1[len])
-		len++;
 	cpy = malloc(len + 1);
 	if (!cpy)
 		return (NULL);

@@ -6,7 +6,7 @@
 #    By: sadoming <sadoming@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/01 11:55:07 by sadoming          #+#    #+#              #
-#    Updated: 2024/10/01 16:12:26 by sadoming         ###   ########.fr        #
+#    Updated: 2024/10/14 13:10:41 by sadoming         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ CNV_DIR = $(SRC_DIR)ft_cnv
 MEM_DIR = $(SRC_DIR)ft_mem
 STR_DIR = $(SRC_DIR)ft_str
 WRT_DIR = $(SRC_DIR)ft_wrt
-
+ARR_DIR = $(SRC_DIR)arrays
 LST_DIR = $(SRC_DIR)ft_lst
 # ------------------- #
 # Sorces:
@@ -46,12 +46,12 @@ IS_SRC = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_iscap.c ft_isdigit.c\
 CNV_SRC = ft_atoi.c ft_atoi_base.c ft_itoa.c ft_strcapitalize.c ft_to_upplow.c
 WRT_SRC = ft_printf.c ft_printf_fd.c ft_write_cast.c ft_write_cast_fd.c
 MEM_SRC = ft_calloc.c ft_free.c ft_memchr.c ft_memcmp.c ft_memcpy.c\
-		  ft_memmove.c ft_memset.c
+		  ft_memmove.c ft_memset.c ft_memdup.c
 STR_SRC = ft_split.c ft_strchr.c ft_strcmp.c ft_strcpy.c ft_strcut.c\
 		  ft_strinter.c ft_strjoin.c ft_strlen.c ft_strstr.c ft_strtrim.c\
 		  ft_substr.c ft_apears_in.c ft_strremove.c
 
-ARR_SRC = ft_arrsize.c
+ARR_SRC = ft_arrmap.c ft_arrpop.c ft_arrpush.c ft_arrsize.c
 
 LST_SRC = ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c\
 		  ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c\
@@ -64,6 +64,7 @@ SRC += $(addprefix $(CNV_DIR)/, $(CNV_SRC))
 SRC += $(addprefix $(MEM_DIR)/, $(MEM_SRC))
 SRC += $(addprefix $(STR_DIR)/, $(STR_SRC))
 SRC += $(addprefix $(WRT_DIR)/, $(WRT_SRC))
+SRC += $(addprefix $(ARR_DIR)/, $(ARR_SRC))
 SRC += $(addprefix $(LST_DIR)/, $(LST_SRC))
 
 OBJS = $(patsubst $(SRC_DIR)%.c, $(OBJ_DIR)/%.o, $(SRC))

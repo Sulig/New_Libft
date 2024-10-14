@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arrays.h                                           :+:      :+:    :+:   */
+/*   ft_arrmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadoming <sadoming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 18:09:37 by sadoming          #+#    #+#             */
-/*   Updated: 2024/10/14 13:07:15 by sadoming         ###   ########.fr       */
+/*   Created: 2024/10/14 12:58:35 by sadoming          #+#    #+#             */
+/*   Updated: 2024/10/14 13:05:40 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARRAYS_H
-# define ARRAYS_H
+#include <stdlib.h>
 
-# include <stdlib.h>
+/*
+ * Make a copy of org
+ * *Return NULL if !org || !size of org
+ */
+void	**arrmap(void **org)
+{
+	char	**copy;
+	size_t	cnt;
 
-/* ARRAYS */
-size_t	ft_arrsize(void **s);
-size_t	ft_arrsize_str(char **s);
-
-void	**arrmap(void **org);
-void	**arrpop(void **org, size_t pop);
-void	**arrpush(void **org, void *add);
-
-char	**ft_strarrdup(char **to_copy);
-
-#endif
+	cnt = 0;
+	if (!org || !ft_arrsize(org))
+		return (NULL);
+	copy = ft_calloc(sizeof(char *), ft_arrsize(org) + 1);
+	if (!copy)
+		return (NULL);
+	while (org[cnt])
+	{
+		copy[cnt] = ft_memdup(org[cnt]);
+		cnt++;
+	}
+	return ((void **)copy);
+}
