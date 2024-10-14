@@ -19,7 +19,7 @@ Tambien incluye algunas funciones de la anterior libreria
 
 Puedes utilizar este repositorio:
 
-    git clone -b that-libft https://github.com/Sulig/New_Libft.git
+    git clone https://github.com/Sulig/New_Libft.git
 
 ***
 ~ Made by sadoming ~ 
