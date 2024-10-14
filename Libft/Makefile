@@ -6,7 +6,7 @@
 #    By: sadoming <sadoming@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/01 11:55:07 by sadoming          #+#    #+#              #
-#    Updated: 2024/10/14 14:04:36 by sadoming         ###   ########.fr        #
+#    Updated: 2024/10/14 16:55:55 by sadoming         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,11 @@ NAME = libft.a
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g #-fsanitize=address
+DEP_FLAGS = -MMD -MP
 INCLUDE = -I $(INC_DIR)/
 # ------------------ #
 # Directories:
 
-DEP_DIR = ./dep
 OBJ_DIR = ./obj
 INC_DIR = ./inc
 
@@ -69,11 +69,11 @@ SRC += $(addprefix $(ARR_DIR)/, $(ARR_SRC))
 SRC += $(addprefix $(LST_DIR)/, $(LST_SRC))
 
 OBJS = $(patsubst $(SRC_DIR)%.c, $(OBJ_DIR)/%.o, $(SRC))
-#DEPS = $(patsubst $(SRC_DIR)%.c, $(DEP_DIR)/%.dep, $(SRC))
-#-include $(DEPS)
+DEPS = $(patsubst $(SRC_DIR)%.c, $(OBJ_DIR)/%.d, $(SRC))
+-include $(DEPS)
 # ******************************************************************************* #
 #-------------------------------------------------------------#
-all: $(NAME) #$(DEPS) #see how to create deps
+all: $(NAME)
 #-------------------------------------------------------------#
 #-------------------------------------------------------------#
 help:
@@ -107,13 +107,9 @@ norm:
 # ******************************************************************************* #
 # Compiling Region:
 
-#$(DEP_DIR)/%.dep: $(SRC_DIR)%.c $(HDR) $(MAK)
-#	@mkdir -p $(@D)
-#	$(CC) -MM $(CFLAGS) $(INCLUDE) -c $< -o $@
-
 $(OBJ_DIR)/%.o: $(SRC_DIR)%.c $(HDR) $(MAK)
 	@mkdir -p $(@D)
-	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
+	$(CC) $(CFLAGS) $(DEP_FLAGS) $(INCLUDE) -c $< -o $@
 
 $(NAME): $(MAK) $(HDR) $(OBJS)
 	@ar rc $(NAME) $(OBJS)
@@ -123,7 +119,6 @@ $(NAME): $(MAK) $(HDR) $(OBJS)
 # Clean region
 
 clean:
-	@/bin/rm -frd $(DEP_DIR)
 	@/bin/rm -frd $(OBJ_DIR)
 	@echo "\033[1;34m\n All objs & deps removed\033[1;97m\n"
 

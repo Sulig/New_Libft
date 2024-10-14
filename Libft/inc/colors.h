@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   colors.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sadoming <sadoming@student.42barcel>       +#+  +:+       +#+        */
+/*   By: sadoming <sadoming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 19:02:46 by sadoming          #+#    #+#             */
-/*   Updated: 2024/02/27 19:00:34 by sadoming         ###   ########.fr       */
+/*   Updated: 2024/10/14 16:55:26 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef COLORS_H
 # define COLORS_H
 
+/* REGULAR COLORS */
 # define R "\033[0;31m"
 # define G "\033[0;32m"
 # define Y "\033[0;33m"
@@ -30,7 +31,7 @@
 # define CR "\033[1;36m"
 # define WR "\033[1;37m"
 
-/* DEFFAULT COLOR*/
+/* DEFFAULT */
 # define D "\033[0m"
 
 #endif
