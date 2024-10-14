@@ -6,7 +6,7 @@
 /*   By: sadoming <sadoming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 12:42:13 by sadoming          #+#    #+#             */
-/*   Updated: 2024/10/14 12:55:04 by sadoming         ###   ########.fr       */
+/*   Updated: 2024/10/14 13:47:11 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ void	**arrpop(void **org, size_t pop)
 	j = 0;
 	i = -1;
 	new_arr = NULL;
-	size = ft_arrsize(org) - 1;
-	if (!size || pop >= ft_arrsize(org))
+	size = arrsize(org) - 1;
+	if (!size || pop >= arrsize(org))
 	{
 		org = ft_free_arr(org);
 		return (NULL);

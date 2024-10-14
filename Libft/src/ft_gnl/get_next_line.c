@@ -6,7 +6,7 @@
 /*   By: sadoming <sadoming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 17:06:43 by sadoming          #+#    #+#             */
-/*   Updated: 2024/10/01 13:11:10 by sadoming         ###   ########.fr       */
+/*   Updated: 2024/10/14 14:03:02 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ char	*ft_get_readed(int fd, char *store)
 		}
 	}
 	free(tmp);
+	tmp = NULL;
 	return (store);
 }
 

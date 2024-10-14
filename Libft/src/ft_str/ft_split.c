@@ -6,7 +6,7 @@
 /*   By: sadoming <sadoming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 13:30:58 by sadoming          #+#    #+#             */
-/*   Updated: 2024/10/01 17:53:36 by sadoming         ###   ########.fr       */
+/*   Updated: 2024/10/14 13:49:10 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "../../inc/memory.h"
 #include "../../inc/string_utils.h"
 
-static void	*ft_free_arr(size_t size, char **words)
+static void	*ft_free_split(size_t size, char **words)
 {
 	while (size--)
 		free(words[size]);
@@ -81,6 +81,6 @@ char	**ft_split(const char *s, char c)
 	if (!s || !words)
 		return (NULL);
 	if (ft_sep(s, c, words) == 0)
-		return (ft_free_arr(ft_words(s, c), words));
+		return (ft_free_split(ft_words(s, c), words));
 	return (words);
 }

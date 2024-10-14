@@ -6,7 +6,7 @@
 /*   By: sadoming <sadoming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 16:16:34 by sadoming          #+#    #+#             */
-/*   Updated: 2024/10/01 17:09:49 by sadoming         ###   ########.fr       */
+/*   Updated: 2024/10/14 13:47:15 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # include <stdlib.h>
 
 /* LENGHT */
-size_t	ft_arrsize(void **s);
-size_t	ft_arrsize_str(char **s);
+size_t	arrsize(void **s);
+size_t	arrsize_str(char **s);
 
 size_t	ft_cnttoch(const char *str, char c, int i);
 size_t	ft_cnttoch_in(const char *str, char c);

@@ -6,7 +6,7 @@
 #    By: sadoming <sadoming@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/01 11:55:07 by sadoming          #+#    #+#              #
-#    Updated: 2024/10/14 13:10:41 by sadoming         ###   ########.fr        #
+#    Updated: 2024/10/14 14:04:36 by sadoming         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ INCLUDE = -I $(INC_DIR)/
 # ------------------ #
 # Directories:
 
+DEP_DIR = ./dep
 OBJ_DIR = ./obj
 INC_DIR = ./inc
 
@@ -58,7 +59,7 @@ LST_SRC = ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c\
 		  ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c\
 		  ft_lstnodepos_bonus.c
 
-SRC = $(addprefix $(GNL_DIR)/, $(GNL_SRC))
+SRC := $(addprefix $(GNL_DIR)/, $(GNL_SRC))
 SRC += $(addprefix $(IS_DIR)/, $(IS_SRC))
 SRC += $(addprefix $(CNV_DIR)/, $(CNV_SRC))
 SRC += $(addprefix $(MEM_DIR)/, $(MEM_SRC))
@@ -68,12 +69,11 @@ SRC += $(addprefix $(ARR_DIR)/, $(ARR_SRC))
 SRC += $(addprefix $(LST_DIR)/, $(LST_SRC))
 
 OBJS = $(patsubst $(SRC_DIR)%.c, $(OBJ_DIR)/%.o, $(SRC))
-
-DEPS = $(OBJS:%.o=%.d)
--include $(DEPS)
+#DEPS = $(patsubst $(SRC_DIR)%.c, $(DEP_DIR)/%.dep, $(SRC))
+#-include $(DEPS)
 # ******************************************************************************* #
 #-------------------------------------------------------------#
-all: $(NAME)
+all: $(NAME) #$(DEPS) #see how to create deps
 #-------------------------------------------------------------#
 #-------------------------------------------------------------#
 help:
@@ -107,9 +107,13 @@ norm:
 # ******************************************************************************* #
 # Compiling Region:
 
+#$(DEP_DIR)/%.dep: $(SRC_DIR)%.c $(HDR) $(MAK)
+#	@mkdir -p $(@D)
+#	$(CC) -MM $(CFLAGS) $(INCLUDE) -c $< -o $@
+
 $(OBJ_DIR)/%.o: $(SRC_DIR)%.c $(HDR) $(MAK)
 	@mkdir -p $(@D)
-	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@ $(INCLUDE)
+	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 $(NAME): $(MAK) $(HDR) $(OBJS)
 	@ar rc $(NAME) $(OBJS)
@@ -119,8 +123,9 @@ $(NAME): $(MAK) $(HDR) $(OBJS)
 # Clean region
 
 clean:
+	@/bin/rm -frd $(DEP_DIR)
 	@/bin/rm -frd $(OBJ_DIR)
-	@echo "\033[1;34m\n All obj removed\033[1;97m\n"
+	@echo "\033[1;34m\n All objs & deps removed\033[1;97m\n"
 
 fclean: clean
 	@/bin/rm -f $(NAME)

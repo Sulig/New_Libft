@@ -6,7 +6,7 @@
 /*   By: sadoming <sadoming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 15:29:20 by sadoming          #+#    #+#             */
-/*   Updated: 2024/10/01 17:23:58 by sadoming         ###   ########.fr       */
+/*   Updated: 2024/10/14 13:49:32 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ char	*ft_strinter(const char *str, const char *inter, size_t pos)
 	size_t	len_i;
 	char	*join;
 
-	len_s = ft_strllen(str);
-	len_i = ft_strllen(inter);
+	len_s = ft_strlen(str);
+	len_i = ft_strlen(inter);
 	if (len_s == 0)
 		return (ft_strdup(inter));
 	if (len_i == 0)
@@ -64,6 +64,6 @@ char	*ft_strinter(const char *str, const char *inter, size_t pos)
 		return (NULL);
 	join = ft_strfill(str, join, pos);
 	join = ft_strnext(inter, join, pos);
-	join = ft_strnext(str + pos, join, ft_strllen(join));
+	join = ft_strnext(str + pos, join, ft_strlen(join));
 	return (join);
 }

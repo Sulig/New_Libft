@@ -6,7 +6,7 @@
 /*   By: sadoming <sadoming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 18:44:32 by sadoming          #+#    #+#             */
-/*   Updated: 2024/10/01 18:39:03 by sadoming         ###   ########.fr       */
+/*   Updated: 2024/10/14 13:55:36 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,8 @@ char	*ft_itoa_unsig(size_t num, char *base)
 }
 
 /*
-* Calls the itoa with a predetermined base, only needs the number and prefix of base:
+* Calls the itoa with a predetermined base,
+* *only needs the number and prefix of base:
 ** `u` || `d` -> Decimal
 ** `b` || `B` -> Bits
 ** `o` || `O` -> Seven

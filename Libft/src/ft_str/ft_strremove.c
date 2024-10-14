@@ -6,7 +6,7 @@
 /*   By: sadoming <sadoming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 17:17:11 by sadoming          #+#    #+#             */
-/*   Updated: 2024/10/01 17:23:58 by sadoming         ###   ########.fr       */
+/*   Updated: 2024/10/14 13:50:32 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ char	*ft_strremove(char *str, const char *rem)
 		str = ft_free_str(str);
 		return (NULL);
 	}
-	pos = ft_cnt_tostr(str, rem);
+	pos = ft_cnttostr(str, rem);
 	start = ft_substr(str, 0, pos);
-	end = str + pos + ft_strllen(rem);
-	result = ft_strjoin_s(start, end);
+	end = str + pos + ft_strlen(rem);
+	result = ft_strjoin(start, end);
 	start = ft_free_str(start);
 	end = NULL;
 	str = ft_free_str(str);

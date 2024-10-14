@@ -6,13 +6,13 @@
 /*   By: sadoming <sadoming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 16:06:57 by sadoming          #+#    #+#             */
-/*   Updated: 2024/10/14 12:19:40 by sadoming         ###   ########.fr       */
+/*   Updated: 2024/10/14 13:46:56 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-size_t	ft_arrsize(void **s)
+size_t	arrsize(void **s)
 {
 	size_t	counter;
 	char	**sr;
@@ -26,7 +26,7 @@ size_t	ft_arrsize(void **s)
 	return (counter);
 }
 
-size_t	ft_arrsize_str(char **s)
+size_t	arrsize_str(char **s)
 {
 	size_t	counter;
 
